@@ -31,10 +31,10 @@ public class Indexcontroller {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("today");    // 뷰 지정
         // /WEB-INF/jsp + hello + .jsp
-
         mv.addObject("msg", new Date());
 
         // 뷰에 넘길 객체를 modelandview 객체에 담음
         return mv;
     }
+
 }
