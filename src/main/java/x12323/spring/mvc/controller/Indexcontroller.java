@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.text.DateFormat;
 import java.util.Date;
 
 
@@ -32,9 +33,24 @@ public class Indexcontroller {
         mv.setViewName("today");    // 뷰 지정
         // /WEB-INF/jsp + hello + .jsp
         mv.addObject("msg", new Date());
+        mv.addObject("date",getToday());
 
         // 뷰에 넘길 객체를 modelandview 객체에 담음
         return mv;
     }
 
+    private String getToday() {
+        Date date = new Date();
+
+        // 날짜와 시간을 자세히 출력하는 형식 객체 정의의
+       DateFormat dateFormat =
+            DateFormat.getDateInstance(
+                DateFormat.LONG);
+
+       // date 객체를 dateFormat 객체를 통해
+       // 자세한 날짜와 시간으로 변환
+        String formattedDate = dateFormat.format(date);
+
+        return formattedDate;
+    }
 }
