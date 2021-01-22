@@ -12,6 +12,19 @@
 <p>등급 : ${mvo.grade}</p>
 <p>포인트 : ${mvo.points}</p>
 <p>가입일 : ${mvo.regdate}</p>
+<hr>
+<div><button type="button" onclick="memberupd('${mvo.userid}')">회원수정</button>
+    <button type="button" onclick="memberdel('${mvo.name}')">회원삭제</button></div>
 
+
+<script>
+    function memberupd(userid){
+        location.href = '/memberupd?userid=' + userid;
+    }
+
+    function memberdel(name) {
+        location.href = '/memberdel?name=' + name;
+    }
+</script>
 </body>
 </html>

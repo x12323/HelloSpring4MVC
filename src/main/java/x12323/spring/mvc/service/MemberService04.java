@@ -24,13 +24,15 @@ public class MemberService04 implements MemberService {
 
     // 회원 정보 수정 (이름, 등급, 포인트)
     public String modifyMember(MemberVO mvo) {
-
-        return null;
+        String result = "Memberinfo modifying...?!?";
+        int cnt = mdao03.updateMember(mvo);
+        if (cnt > 0) result = "Memberinfo modifying completed!!";
+        return result;
     }
 
     // 회원 정보 삭제 (이름)
     public String removeMember(String name) {
-
+        String result = "회원정보 삭제처리중...?!?";
         return null;
     }
 

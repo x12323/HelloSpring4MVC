@@ -46,4 +46,29 @@ public class MemberController {
 
         return mv;
     }
+
+    @GetMapping("/memberdel")
+    public String memberdel(String name){
+
+        System.out.println(msrv04.removeMember(name));
+
+        // 성적데이터를 삭제하고 난뒤 /sungjuklist로 바로 이동
+        return "redirect:/memberlist";
+    }
+
+    @GetMapping("/memberupd")
+    public ModelAndView memberupd(String userid) {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("memberupd");
+        mv.addObject("mvo",msrv04.readOneMember(userid));
+
+        return mv;
+    }
+
+    @GetMapping("/memberupdok")
+    public String memberupdok(MemberVO mvo) {
+        System.out.println(msrv04.modifyMember(mvo));
+
+        return "redirect:/memberlist";
+    }
 }

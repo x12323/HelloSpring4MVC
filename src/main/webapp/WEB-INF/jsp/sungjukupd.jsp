@@ -6,10 +6,10 @@
 <body>
 <h1>성적처리수정</h1>
 <form name="sjfrm" method="post" action="/sungjukupdok">
-    <div>이름 : <input type="text" name="name" value="${sj.name}" readonly></div>
-    <div>국어 : <input type="text" name="kor" value="${sj.kor}"></div>
-    <div>영어 : <input type="text" name="eng" value="${sj.eng}"></div>
-    <div>수학 : <input type="text" name="mat" value="${sj.mat}"></div>
+    <>이름 : <button type="text" name="name" value="${sj.name}"readonly></button></div>
+    <div>국어 : <button type="text" name="kor" value="${sj.kor}"></button></div>
+    <div>영어 : <button type="text" name="eng" value="${sj.eng}"></button></div>
+    <div>수학 : <button type="text" name="mat" value="${sj.mat}"></button></div>
     <input type="hidden" name="sjno" value="${sj.sjno}">
     <div><button type="submit">수정완료</button></div>
 </form>
